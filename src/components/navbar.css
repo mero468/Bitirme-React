@@ -1,0 +1,95 @@
+nav {
+    width: 100%;
+    background: #fffbf6;
+    
+  }
+  
+  .logo {
+    font-size: 2rem !important;
+    line-height: 30px !important;
+    padding: 0 0px !important;
+    font-weight: 700 !important;
+    font-family: 'Bitter', serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    color: #EF791F !important;
+  }
+  
+  nav ul {
+    float: right;
+    margin-right: 20px;
+  }
+
+  /* @media screen and (max-width: 750px) {
+    nav ul li {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    .zebby{
+      padding: 0 !important;
+      margin-top: 1rem;
+    }
+    .nav-link{
+      padding: 0 !important;
+      margin:  0 !important;
+    }
+    .btn,.btn-outline{
+      margin: 0 !important;
+    }
+  } */
+  
+  nav ul li {
+    display: inline-block;
+    line-height: 20px;
+    padding-top: 1rem;
+    margin: 0 5px;
+  }
+  
+  nav button {
+    display: inline-block;
+    line-height: 30px;
+    margin: 0 5px;
+  }
+  
+  .zebby a {
+    font-size: 1.5rem !important;
+    padding: 0.5em;
+    text-decoration: none;
+    color: var(--clr-secondary);
+  }
+  
+  .zebby a.active,
+  .zebby a:hover {
+    border-bottom: 2px solid var(--clr-primary);
+    transition: 0.3s;
+  }
+  
+  .checkbtn {
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  .login{
+    font-weight: 900!important;
+    color: #fefefe !important;
+    background-color: #FFA166 !important;
+    border: var(--bs-btn-border-width) solid #FFA166!important;
+    border-radius: var(--bs-btn-border-radius)!important;
+}
+.login:hover,
+.login:active{
+    font-weight: 900!important;
+    color: #fefefe !important;
+    background-color: #DA5C40 !important;
+    border: var(--bs-btn-border-width) solid #DA5C40!important;
+    border-radius: var(--bs-btn-border-radius)!important;
+}
+  
+  #check {
+    display: none;
+  }
+  /* End Menu */
