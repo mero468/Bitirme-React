@@ -3,7 +3,6 @@ import Signup from './pages/Signup/Signup';
 import Login from './pages/Login/Login';
 import Verify from "./pages/verify-success/Verify";
 import Home from "./pages/Home/Home";
-import Dashboard from "./pages/Dashboard/dashboard";
 import TicketPage from "./pages/TicketPage/TicketPage";
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
         <Route path="*" element={<Home />} />
         <Route path="" element = {<Home/>}/>
         <Route path="/ticket/1" element ={<TicketPage/>}/>
-        <Route path="dashboard" element ={<Dashboard/>} />
     </Routes>
     </Router>
 
