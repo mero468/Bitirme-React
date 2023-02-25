@@ -1,13 +1,11 @@
 :root {
   --clr-primary: #EF791F;
   --clr-secondary: #272d36;
-  height: 100%;
+  --orangegradient:  linear-gradient(90deg, rgba(218,92,64,1) 0%, rgba(219,95,68,1) 28%, rgba(225,120,97,1) 86%);
+  --white-boxshadow-dark: 0px 22px 34pxrgba(0, 0, 0, .1);
 
 }
-#root{
-  height: 100%;
 
-}
 html {
   overscroll-behavior: none;
   height: 100vh;
@@ -73,9 +71,7 @@ body{
 
 ::-webkit-scrollbar {
 	width: 6px;
-	background-color: #F7A93B;
-
 }
 ::-webkit-scrollbar-thumb {
-	background-color: #EF791F;
+	background-color: #F7A93B;
 }

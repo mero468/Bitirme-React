@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import "../loginandsignup.css";
-import { NavBar } from '../../components/NavBar';
+import { NavBar } from '../../common/NavBar';
 import { useEffect } from 'react';
 import moment from 'moment';
 import Modal from 'react-bootstrap/Modal';

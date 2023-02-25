@@ -1,7 +1,8 @@
 nav {
     width: 100%;
-    background: #fffbf6;
-    
+    background: var(--orangegradient);
+    height: 20vh;
+    overflow-x: hidden;
   }
   
   .logo {
@@ -12,7 +13,7 @@ nav {
     font-family: 'Bitter', serif;
     font-family: 'Josefin Sans', sans-serif;
     font-family: 'Ubuntu', sans-serif;
-    color: #EF791F !important;
+    color: #FFF !important;
   }
   
   nav ul {
@@ -20,6 +21,9 @@ nav {
     margin-right: 20px;
   }
 
+  .nav-btn {
+    width: 360px;
+  }
   /* @media screen and (max-width: 750px) {
     nav ul li {
       padding: 0 !important;
@@ -55,13 +59,16 @@ nav {
     font-size: 1.5rem !important;
     padding: 0.5em;
     text-decoration: none;
-    color: var(--clr-secondary);
+    color: #fefefe;
   }
   
   .zebby a.active,
   .zebby a:hover {
-    border-bottom: 2px solid var(--clr-primary);
+    border-bottom: 2px solid #fefefe;
     transition: 0.3s;
+    color: #fefefe;
+
+    
   }
   
   .checkbtn {
@@ -73,20 +80,28 @@ nav {
     cursor: pointer;
     display: none;
   }
-  .login{
-    font-weight: 900!important;
-    color: #fefefe !important;
-    background-color: #FFA166 !important;
-    border: var(--bs-btn-border-width) solid #FFA166!important;
-    border-radius: var(--bs-btn-border-radius)!important;
+.login{
+  font-weight: 500!important;
+  color: #fefefe !important;
+  background-color: #eeab9c !important;
+  border: var(--bs-btn-border-width) solid #eeab9c!important;
+  font-size: 18pt !important;
+  height: 70%;
+}
+.leftbtn{
+  border-top-left-radius: 50px !important;
+  border-bottom-left-radius: 50px !important;
+}
+.rightbtn{
+  border-top-right-radius: 50px !important;
+  border-bottom-right-radius: 50px !important;
 }
 .login:hover,
 .login:active{
     font-weight: 900!important;
-    color: #fefefe !important;
-    background-color: #DA5C40 !important;
-    border: var(--bs-btn-border-width) solid #DA5C40!important;
-    border-radius: var(--bs-btn-border-radius)!important;
+    color: #272d36 !important;
+    background-color: #FFF !important;
+    border: var(--bs-btn-border-width) solid #FFF!important;
 }
   
   #check {

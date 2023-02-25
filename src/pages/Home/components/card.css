@@ -1,0 +1,99 @@
+
+.translate-grow:hover {
+    transform: translate(0, -3px) scale(101%);
+}
+
+.slider-image{
+  max-height: 400px !important;
+  object-fit:cover;
+  min-height: 200px;
+}
+  
+
+.card {
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    opacity: 0.8;
+    max-width: 300px!important;
+  }
+  
+  .card-img {
+    border-radius: 0.5rem 0.5rem 0 0;
+    height: 200px;
+    width: 100%;
+    background: url("https://silicon.createx.studio/assets/img/portfolio/courses/01.jpg")
+      center center;
+    background-size: cover;
+  }
+  
+  .card-img button {
+    height: fit-content;
+    border: none;
+    margin: 1rem;
+  }
+  
+  .label {
+    background: #22c55e;
+    border-radius: 0.2rem;
+    color: #fff;
+  }
+  
+  .save {
+    width: 2rem;
+    height: 2rem !important;
+    border-radius: 2rem;
+    color: #33354d;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .material-symbols-outlined {
+    height: 1rem;
+  }
+  
+  .card-desc {
+    padding: 1rem;
+    color: #9397ad;
+  }
+  
+  hr {
+    color: #9397ad;
+  }
+  
+  .card-desc-last {
+    display: flex;
+    gap: 1rem;
+  }
+  .event-price{
+    height: 50px;
+    width: 100%;
+    background-color: #F5F5F5;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 50px;
+    color:  #DB5F43 !important;
+  }
+  
+  .price {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #33354d;
+
+  }
+  .iconthing{
+    color: #6366f1 !important;
+
+  }
+  
+.basket-btn:hover{
+  color:  #DB5F43 !important;
+}
+
+.basket-btn{
+  border: 0;
+  font-size: 20pt;
+  color:  #eeab9c !important;
+
+}

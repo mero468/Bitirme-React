@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import { NavBar } from '../../components/NavBar';
+import { NavBar } from '../../common/NavBar';
 import Modal from 'react-bootstrap/Modal';
 import { useNavigate } from 'react-router-dom';
 

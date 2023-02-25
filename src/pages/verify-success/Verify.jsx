@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavBar } from '../../components/NavBar';
+import { NavBar } from '../../common/NavBar';
 import { useNavigate } from 'react-router-dom';
 
 const Verify = () => {
