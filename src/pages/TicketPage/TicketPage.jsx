@@ -35,6 +35,6 @@ function TicketPage() {
             </div>
         </>
     )
-}d
+}
 
 export default TicketPage
