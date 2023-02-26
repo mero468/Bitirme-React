@@ -75,23 +75,19 @@ function TicketPage() {
                                                     Tarih Seçiniz
                                                 </div>
                                             </div>
-                                        <div class="seances-area">
-                                                <div _ngcontent-serverapp-c69="" class="ng-star-inserted">
-                                                    <div _ngcontent-serverapp-c69="" class="ng-star-inserted">
-                                                        <div _ngcontent-serverapp-c69="" class="seance ng-star-inserted">
-                                                            <div _ngcontent-serverapp-c69="" class="seance-left ng-star-inserted">
-                                                                <div _ngcontent-serverapp-c69="" class="seance-date">01 Mart Çar / 21:30</div>
-                                                                <div _ngcontent-serverapp-c69="" class="seance-place">IF Performance Hall Beşiktaş</div>
-                                                                <div _ngcontent-serverapp-c69="" class="seance-place ng-star-inserted"> * Dayanışma Etkinliği * </div>
-                                                                <div _ngcontent-serverapp-c69="" class="seance-seat active single-seance standing">
-                                                                    <em _ngcontent-serverapp-c69=""></em>
-                                                                    <span _ngcontent-serverapp-c69="">AYAKTA DÜZEN</span>
-                                                                    <div _ngcontent-serverapp-c69="" class="help-event ng-star-inserted">
-                                                                        <div _ngcontent-serverapp-c69="" class="help-event-icon">
-                                                                        </div>
-                                                                        <div _ngcontent-serverapp-c69="" class="help-event-text">DAYANIŞMA</div>
-                                                                    </div>
+                                            <div class="seances-area">
+                                                <div class="seance ng-star-inserted">
+                                                    <div class="seance-left ng-star-inserted">
+                                                        <div class="seance-date">01 Mart Çar / 21:30</div>
+                                                        <div class="seance-place">IF Performance Hall Beşiktaş</div>
+                                                        <div class="seance-place ng-star-inserted"> * Dayanışma Etkinliği * </div>
+                                                        <div class="seance-seat active single-seance standing">
+                                                            <em></em>
+                                                            <span>AYAKTA DÜZEN</span>
+                                                            <div class="help-event ng-star-inserted">
+                                                                <div class="help-event-icon">
                                                                 </div>
+                                                                <div class="help-event-text">DAYANIŞMA</div>
                                                             </div>
                                                         </div>
                                                     </div>

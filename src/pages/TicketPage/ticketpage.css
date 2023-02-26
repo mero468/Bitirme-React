@@ -80,7 +80,7 @@
     #event-page .poster {
         position: relative;
         top: 0;
-        margin-bottom: -10px;
+        margin-bottom: -25px;
     }
     #event-page .cont-box  {
         padding: 20px;
@@ -92,12 +92,21 @@
     #event-page .detail-top-body .detail-top-area .detail-top-area-left {
         max-width: 375px;
     }
+    .seance{
+        min-height: 110px;
+    }
 }
-@media screen and  (min-width: 1200px){
+@media screen and  (max-width: 1200px){
     .container, .container-lg, .container-md, .container-sm, .container-xl {
         max-width: 1140px;
     }
+    .seance {
+        min-height: 100px;
+    }
     
+}
+ol{
+    padding-left: 0!important;
 }
 
 #event-page .poster {
@@ -116,7 +125,7 @@
 }
 #event-page .cont-box  {
     background:#fff;
-    border-radius:5px;
+    border-radius:20px;
     padding: 30px;
     margin-bottom: 30px;
     min-height: calc(100% - 30px);
@@ -151,5 +160,50 @@
     justify-content: space-between;
     grid-gap: 0 15px;
     gap: 0 15px;
+}
+
+/* Box header tickets prices */
+#event-page .cont-box .box-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#event-page .cont-box .box-header .box-header-title {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    grid-gap: 0 10px;
+    gap: 0 10px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--black-dark);
+}
+#event-page .box .box-header .box-header-title-right {
+    margin-left: auto;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--black-dark);
+}
+#event-page .seances-area {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px 0;
+    gap: 10px 0;
+}
+.seance {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    min-height: 120px;
+    background: #fff;
+    border: 1px solid var(--white-above-gray-light);
+    border-radius: var(--border-radius);
+    -webkit-user-select: none;
+    user-select: none;
+    transition: .3s color,.3s background-color;
+}
+.seance:hover {
+    border-color: var(--orange);
+    background: var(--light-orange);
 }
 
