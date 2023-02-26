@@ -36,7 +36,7 @@ export const NavBar = () => {
   // document.addEventListener("scroll", handleScroll);
   return (
     <>
-     <Navbar  expand='sm'>
+      <Navbar  expand='sm'>
       <Container style={{position:'absolute'}} fluid>
         <Navbar.Brand className='logo ms-5' href="/">NFT Tickets</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -51,7 +51,29 @@ export const NavBar = () => {
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+      </Navbar>
+      <div className=' a7a'>
+          <div className='search-area container-fluid px-5 '>
+            <div class=" row no-gutters bars justify-content-center">
+              <div className='col-9 bar'>
+                  <div class="input-group mb-3">
+                  <input type="text" class="ps-5 form-control search-inpt " placeholder="Search for Event" aria-label="Search for event" aria-describedby="basic-addon2"/>
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary my-0 search-btn" type="button"><i class="fas fa-search fa-lg fa-fw"></i></button>
+                  </div>
+                  </div>
+              </div>
+              <div className='col-3'>
+                {/* <div class="input-group mb-3">
+                    <input type="text" class=" form-control search-inpt " placeholder="Izmir" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary my-0 search-btn" type="button"><i class="fas fa-search fa-lg fa-fw"></i></button>
+                    </div>
+                </div> */}
+              </div>
+            </div>
+        </div>
+      </div>
     </>
   )
 }

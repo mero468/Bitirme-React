@@ -137,11 +137,6 @@
 }
 
 
-#event-page .detail-top-area .detail-top-area-left {
-    max-width: 450px;
-    padding-left: 10px;
-}
-
 
 @media (max-width: 992px){
 
@@ -158,4 +153,3 @@
     gap: 0 15px;
 }
 
-/* Tags */

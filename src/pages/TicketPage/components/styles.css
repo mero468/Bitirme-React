@@ -1,4 +1,4 @@
-
+/* Top LEFT AND TITLE (TAGS) */
 #event-page .detail-top-area .detail-top-area-left .detail-top-left-content ul {
     display: flex;
     flex-wrap: wrap;
@@ -128,4 +128,125 @@ ol, ul {
 
 .breadcrumb ol li a:hover{
     opacity: 0.5;
+}
+/* ************************************************************************* */
+
+/* Summary OF EVENT */
+
+@media (max-width: 992px)
+{#event-page .detail-event-summary {
+    padding: 10px 20px 20px;
+}
+}
+@media (max-width: 1400px)
+{
+    #event-page .detail-event-summary {
+        margin-top: 15px;
+        padding: 15px 25px 25px;
+    }
+    #event-page .detail-event-summary .event-summary-content {
+        grid-gap: 5px 0;
+        gap: 5px 0;
+    }
+    #event-page .detail-event-summary .event-summary-content h2, #event-page .detail-event-summary .event-summary-content p, #event-page .detail-event-summary .event-summary-content li {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    #event-page .detail-event-summary .summary-read-more {
+        left: 25px;
+    }
+}
+
+#event-page .detail-event-summary {
+    background: var(--body);
+    padding: 15px 20px 25px;
+    position: relative;
+    margin-top: 25px;
+    border-radius: var(--border-radius);
+}
+
+@media (max-width: 576px)
+{
+    #event-page .detail-event-summary .event-summary-content {
+    max-height: 70px;
+}
+}
+@media (max-width: 992px)
+{
+    #event-page .detail-event-summary .event-summary-content {
+        grid-gap: 3px 0;
+        gap: 3px 0;
+    }
+    #event-page .detail-event-summary .event-summary-content h2, #event-page .detail-event-summary .event-summary-content p, #event-page .detail-event-summary .event-summary-content li {
+        font-size: 13px;
+        line-height: 22px;
+    }
+    #event-page .detail-event-summary .event-summary-content .active {
+        max-height: 250px;
+    }
+    #event-page .detail-event-summary .summary-read-more {
+        left: 20px;
+        height: 27px;
+        font-size: 12px;
+    }
+}
+#event-page .detail-event-summary .event-summary-content {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 5px 0;
+    gap: 5px 0;
+    overflow: hidden;
+    max-height: 80px;
+    transition: .5s max-height;
+}
+
+#event-page .detail-event-summary .event-summary-content h2 {
+    font-weight: 600 !important;
+    color: var(--black);
+}
+
+#event-page .detail-event-summary .event-summary-content h2, #event-page .detail-event-summary .event-summary-content p, #event-page .detail-event-summary .event-summary-content li {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--black);
+    line-height: 27px;
+    padding-right: 10px;
+}
+
+#event-page  .detail-event-summary .event-summary-content.active {
+    max-height: 360px;
+    overflow: auto;
+    padding-right: 20px;
+}
+
+#event-page .detail-event-summary .summary-read-more.show {
+    display: flex;
+}
+#event-page .detail-event-summary .summary-read-more:hover {
+    background: var(--orange-hover);
+}
+
+#event-page .detail-event-summary .summary-read-more {
+    display: none;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    background: var(--orange);
+    color: var(--white);
+    height: 32px;
+    position: absolute;
+    left: 20px;
+    bottom: -12px;
+    border: 0;
+    padding: 0 15px;
+    border-radius: 5px;
+    transition: .3s background-color;
+}
+#event-page .detail-event-summary .event-summary-content.active+.summary-read-more:before {
+    content: "DARALT";
+}
+
+#event-page .detail-event-summary .summary-read-more:before {
+    content: "DEVAMI";
 }

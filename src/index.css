@@ -6,12 +6,16 @@
   --white-above-gray-dark: #9d9d9d;
   --body: #F1F1F1;
   --white-above-orange: rgba(225,120,97,1) ;
-  --black: #000000;
+  --black: #4b4b4b;
+  --border-radius: 20px;
+  --white: #FFFFFF;
+  --orange: rgba(225,120,97,1) ;
+  --orange-hover: rgba(219,95,68,1);
 }
 
 
 html, body {
-  font-family: Montserrat,sans-serif;
+  font-family: Montserrat,sans-serif !important;
   font-size: 16px;
   height: 100%;
   font-weight: 400;
@@ -24,7 +28,6 @@ html, body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Josefin Sans", sans-serif;
 }
 .section {
   width: 100%;
@@ -73,8 +76,8 @@ html, body {
 }
 
 ::-webkit-scrollbar {
-	width: 6px;
+	width: 2px;
 }
 ::-webkit-scrollbar-thumb {
-	background-color: #F7A93B;
+	background-color: rgba(225,120,97,1) ;
 }
