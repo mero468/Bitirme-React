@@ -157,13 +157,5 @@
     grid-gap: 0 15px;
     gap: 0 15px;
 }
-#event-page .detail-top-area .detail-top-area-left .detail-top-left-content ul {
-    display: flex;
-    flex-wrap: wrap;
-    grid-gap: 15px 0;
-    gap: 15px 0;
-}
-ul{
-    list-style: none;    
-}
 
+/* Tags */

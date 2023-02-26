@@ -1,5 +1,6 @@
 import React from 'react';
 import "./ticketpage.css";
+import Breadcrumb from './components/breadcrumb';
 import Tags from './components/tags';
 function TicketPage() {
   return (
@@ -7,13 +8,7 @@ function TicketPage() {
             
             <div id="event-page" class="contents-area">
                 <div class="container">
-                    <div aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#"><i class="fas fa-home fa-sm  "></i></a></li>
-                            <li class="breadcrumb-item"><a href="#">Etkinlik</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Cem Adrian Konseri</li>
-                        </ol>
-                    </div> 
+                    <Breadcrumb/>
                     <div className='detail'>
                         <div class="row">
                             <div id="gallery" class="col-md-4 col-lg-3" style={{marginBottom: -10 ,zIndex:0}}>

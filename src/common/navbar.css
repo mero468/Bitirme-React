@@ -24,23 +24,6 @@ nav {
   .nav-btn {
     width: 360px;
   }
-  /* @media screen and (max-width: 750px) {
-    nav ul li {
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-    .zebby{
-      padding: 0 !important;
-      margin-top: 1rem;
-    }
-    .nav-link{
-      padding: 0 !important;
-      margin:  0 !important;
-    }
-    .btn,.btn-outline{
-      margin: 0 !important;
-    }
-  } */
   
   nav ul li {
     display: inline-block;
@@ -67,8 +50,6 @@ nav {
     border-bottom: 2px solid #fefefe;
     transition: 0.3s;
     color: #fefefe;
-
-    
   }
   
   .checkbtn {
