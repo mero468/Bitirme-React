@@ -1,12 +1,16 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import { useNavigate } from "react-router-dom";
+
 import "./navbar.css"
 export const NavBar = () => {
+  let navigate = useNavigate(); 
+  const routeChange = (path) =>{ 
+    navigate(path);
+  }
+  
 
   // var scrollToTopBtn = document.querySelector(".scrollToTopBtn");
   // var rootElement = document.documentElement;
@@ -38,16 +42,11 @@ export const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav  className="me-auto">
-            {/* <ul className='zebby'>
-              <li>
-                <Nav.Link className="nav-link" href="/">Home</Nav.Link>
-              </li>
-            </ul> */}
             </Nav>
             <Nav>
             <div class="btn-group nav-btn  rounded-pill me-5" role="group" aria-label="Outline example">
-                <button type="button" href='/signup' class="btn leftbtn  btn-outline-primary login"> <i class="fas fa-user fa-sm  me-2"></i> Signup</button>
-                <button type="button" href="/login" class="btn rightbtn btn-outline-primary login"><i class="fas fa-arrow-right fa-xs me-2  "></i> Login</button>
+                <button type="button" onClick={() => routeChange("/signup")} class="btn leftbtn  btn-outline-primary login"> <i class="fas fa-user fa-sm  me-2"></i> Signup</button>
+                <button type="button" onClick={() => routeChange("/login")} class="btn rightbtn btn-outline-primary login"><i class="fas fa-arrow-right fa-xs me-2 "></i> Login</button>
             </div>
           </Nav>
         </Navbar.Collapse>

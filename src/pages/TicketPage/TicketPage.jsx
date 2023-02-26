@@ -1,5 +1,6 @@
-import React from 'react'
-import "./ticketpage.css"
+import React from 'react';
+import "./ticketpage.css";
+import Tags from './components/tags';
 function TicketPage() {
   return (
         <>
@@ -15,8 +16,8 @@ function TicketPage() {
                     </div> 
                     <div className='detail'>
                         <div class="row">
-                            <div id="gallery" class="col-md-4 col-lg-3">
-                                <div _ngcontent-serverapp-c61="" class="lightGallery">
+                            <div id="gallery" class="col-md-4 col-lg-3" style={{marginBottom: -10 ,zIndex:0}}>
+                                <div class="lightGallery">
                                     <div class="poster ng-star-inserted" data-src="https://cdn.bubilet.com.tr/files/Etkinlik/cem-adrian-konseri-40087.jpg" data-lg-id="4ed766e4-ed8d-43be-a045-e4e6b52f8a21">
                                         <img alt="Cem Adrian Konseri" src="https://cdn.bubilet.com.tr/files/Etkinlik/cem-adrian-konseri-40087.jpg" class="ng-star-inserted"/>            
                                         <span>
@@ -26,8 +27,25 @@ function TicketPage() {
                                     </div>
                                 </div>
                             </div>
-                            <div class="ms-5 col-md-7">
-                                    a7a
+                            <div class="col-md-8 col-lg-9 " style={{zIndex:1}}>
+                                    <div className='row'>
+                                            <div className='col-12'>
+                                                <div className='cont-box detail-top-box'>
+                                                    <div class="detail-top-area">
+                                                        <div class="detail-top-area-left">
+                                                            <div class="detail-top-title-wrapper">
+                                                                <h1 class="detail-top-title"> Gökhan Türkmen Konseri </h1>
+                                                            </div>
+                                                        <div class="mt-2 detail-top-left-content">
+                                                            <ul>
+                                                                <Tags/>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
