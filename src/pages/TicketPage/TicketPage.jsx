@@ -4,11 +4,11 @@ import Breadcrumb from './components/breadcrumb';
 import Tags from './components/tags';
 import { NavBar } from '../../common/NavBar';
 function TicketPage() {
-
+  const currentpage = "home";
   const [active,setActive] = useState("");
   return (
         <>
-            <NavBar/>
+            <NavBar currentpage={currentpage}/>
             <div id="event-page" class="mt-5 contents-area">
                 <div class="container">
                     <Breadcrumb/>

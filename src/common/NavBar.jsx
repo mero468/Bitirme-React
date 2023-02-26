@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { useNavigate } from "react-router-dom";
 
 import "./navbar.css"
-export const NavBar = () => {
+export const NavBar = (props) => {
   let navigate = useNavigate(); 
   const routeChange = (path) =>{ 
     navigate(path);
@@ -52,28 +52,35 @@ export const NavBar = () => {
         </Navbar.Collapse>
       </Container>
       </Navbar>
-      <div className=' a7a'>
-          <div className='search-area container-fluid px-5 '>
-            <div class=" row no-gutters bars justify-content-center">
-              <div className='col-9 bar'>
-                  <div class="input-group mb-3">
-                  <input type="text" class="ps-5 form-control search-inpt " placeholder="Search for Event" aria-label="Search for event" aria-describedby="basic-addon2"/>
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary my-0 search-btn" type="button"><i class="fas fa-search fa-lg fa-fw"></i></button>
-                  </div>
-                  </div>
-              </div>
-              <div className='col-3'>
-                {/* <div class="input-group mb-3">
-                    <input type="text" class=" form-control search-inpt " placeholder="Izmir" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+      {props.currentpage == "home"?
+            <div className=' a7a'>
+            <div className='search-area container-fluid px-5 '>
+              <div class=" row no-gutters bars justify-content-center">
+                
+                <div className='col-9 bar'>
+                    <div class="input-group mb-3">
+                    <input type="text" class="ps-5 form-control search-inpt " placeholder="Search for Event" aria-label="Search for event" aria-describedby="basic-addon2"/>
                     <div class="input-group-append">
                       <button class="btn btn-outline-secondary my-0 search-btn" type="button"><i class="fas fa-search fa-lg fa-fw"></i></button>
                     </div>
-                </div> */}
+                    </div>
+                </div>
+                <div className='col-3'>
+                  {/* <div class="input-group mb-3">
+                      <input type="text" class=" form-control search-inpt " placeholder="Izmir" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary my-0 search-btn" type="button"><i class="fas fa-search fa-lg fa-fw"></i></button>
+                      </div>
+                  </div> */}
+                </div>
               </div>
-            </div>
+          </div>
         </div>
-      </div>
+        :
+        <>
+        </>
+      }
+
     </>
   )
 }

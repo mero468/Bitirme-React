@@ -6,7 +6,7 @@ import Slider from './components/Slider';
 const Home = () => {
   return (
     <>
-        <NavBar/> 
+        <NavBar currentpage={"home"}/> 
         <div className=' a7a pb-5 '>
           <Slider/>
           <div className='filter-area container-fluid '>
