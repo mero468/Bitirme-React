@@ -107,7 +107,7 @@ ol, ul {
 
 .breadcrumb ol li {
     font-size: 15px;
-    font-weight: 900;
+    font-weight: 600;
     color: var(--white-above-orange);
     position: relative;
     padding-right: 30px;

@@ -14,7 +14,9 @@
   --white-above-gray-light:#e2e2e2;
   --light-orange:rgb(255, 214, 204);
 }
-
+a{
+  text-decoration: none!important;
+}
 
 html, body {
   font-family: Montserrat,sans-serif !important;
@@ -78,7 +80,7 @@ html, body {
 }
 
 ::-webkit-scrollbar {
-	width: 2px;
+	width: 5px;
 }
 ::-webkit-scrollbar-thumb {
 	background-color: rgba(225,120,97,1) ;

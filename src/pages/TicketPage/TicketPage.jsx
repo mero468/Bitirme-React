@@ -3,42 +3,44 @@ import "./ticketpage.css";
 import Breadcrumb from './components/breadcrumb';
 import Tags from './components/tags';
 import { NavBar } from '../../common/NavBar';
+import Ticket from './components/ticket';
 function TicketPage() {
   const currentpage = "home";
   const [active,setActive] = useState("");
   return (
         <>
             <NavBar currentpage={currentpage}/>
-            <div id="event-page" class="mt-5 contents-area">
-                <div class="container">
+            <div id="event-page" className="mt-5 contents-area">
+                <div className="container">
                     <Breadcrumb/>
                     <div className='detail'>
-                        <div class="row">
-                            <div id="gallery" class="col-md-4 col-lg-3" style={{marginBottom: -10 ,zIndex:0}}>
-                                <div class="lightGallery">
-                                    <div class="poster ng-star-inserted" data-src="https://cdn.bubilet.com.tr/files/Etkinlik/cem-adrian-konseri-40087.jpg" data-lg-id="4ed766e4-ed8d-43be-a045-e4e6b52f8a21">
-                                        <img alt="Cem Adrian Konseri" src="https://cdn.bubilet.com.tr/files/Etkinlik/cem-adrian-konseri-40087.jpg" class="ng-star-inserted"/>            
+                        <div className="row">
+                            <div id="gallery" className="col-md-4 col-lg-3" style={{marginBottom: -10 ,zIndex:0}}>
+                                <div className="lightGallery">
+                                    <div className="poster " data-src="https://cdn.bubilet.com.tr/files/Etkinlik/cem-adrian-konseri-40087.jpg" data-lg-id="4ed766e4-ed8d-43be-a045-e4e6b52f8a21">
+                                        <img alt="Cem Adrian Konseri" src="https://cdn.bubilet.com.tr/files/Etkinlik/cem-adrian-konseri-40087.jpg" className=""/>            
                                         <span>
                                         </span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-8 col-lg-9 " style={{zIndex:1}}>
+                            <div className="col-md-8 col-lg-9 " style={{zIndex:1}}>
                                 <div className='row'>
+                                    {/* Information */}
                                     <div className='col-12'>
                                         <div className='cont-box detail-top-box'>
-                                            <div class="detail-top-area">
-                                                <div class="detail-top-area-left">
-                                                    <div class="detail-top-title-wrapper">
-                                                        <h1 class="detail-top-title"> Gökhan Türkmen Konseri </h1>
+                                            <div className="detail-top-area">
+                                                <div className="detail-top-area-left">
+                                                    <div className="detail-top-title-wrapper">
+                                                        <h1 className="detail-top-title"> Gökhan Türkmen Konseri </h1>
                                                     </div>
-                                                <div class="mt-2 detail-top-left-content">
+                                                <div className="mt-2 detail-top-left-content">
                                                     <ul>
                                                         <Tags/>
                                                         <Tags/>
                                                     </ul>
                                                 </div>
-                                                <div class="detail-event-summary">
+                                                <div className="detail-event-summary">
                                                     <div className={"event-summary-content scroll-dark "+active}>
                                                         <h2>Etkinlik Detayı</h2>
                                                         <p>
@@ -61,35 +63,46 @@ function TicketPage() {
                                                         active =="active" ?
                                                         setActive(""):
                                                         setActive("active")
-                                                        }} aria-label="Read More Of Summary" class="summary-read-more show"></button>
+                                                        }} aria-label="Read More Of Summary" className="summary-read-more show"></button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     </div>
-                                    <div class="col-12 col-xl-7">
-                                        <div id="seanslar" class="cont-box ">
-                                            <div class="box-header">
-                                                <h3 class="box-header-title">Bilet Satın Al</h3>
-                                                <div class="box-header-title-right">
+                                    {/* Tickets */}
+                                    <div className="col-12 col-xl-7">
+                                        <div id="seanslar" className="cont-box ">
+                                            <div className="box-header">
+                                                <h3 className="box-header-title">Bilet Satın Al</h3>
+                                                <div className="box-header-title-right">
                                                     Tarih Seçiniz
                                                 </div>
                                             </div>
-                                            <div class="seances-area">
-                                                <div class="seance ng-star-inserted">
-                                                    <div class="seance-left ng-star-inserted">
-                                                        <div class="seance-date">01 Mart Çar / 21:30</div>
-                                                        <div class="seance-place">IF Performance Hall Beşiktaş</div>
-                                                        <div class="seance-place ng-star-inserted"> * Dayanışma Etkinliği * </div>
-                                                        <div class="seance-seat active single-seance standing">
-                                                            <em></em>
-                                                            <span>AYAKTA DÜZEN</span>
-                                                            <div class="help-event ng-star-inserted">
-                                                                <div class="help-event-icon">
-                                                                </div>
-                                                                <div class="help-event-text">DAYANIŞMA</div>
-                                                            </div>
-                                                        </div>
+                                            <Ticket/>
+                                            <Ticket/>
+                                            <Ticket/>
+                                            <Ticket/>
+                                            <Ticket/>
+
+
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Artists */}
+                                    <div className="col-lg-12 col-xl-5 ng-star-inserted">
+                                        <div id="oyuncular" className="cont-box">
+                                            <div className="box-header">
+                                                <h3 className="box-header-title">Sanatçılar</h3>
+                                            </div>
+                                            <div className="detail-artist">
+                                                <div className="artist ng-star-inserted">
+                                                    <div className="artist-image">
+                                                        <img alt="Gökhan Türkmen" src="https://cdn.bubilet.com.tr/files/Sanatci/gokhan-turkmen-31857.jpg" className="ng-star-inserted"/>
+                                                    </div>
+                                                    <div className="artist-body">
+                                                        <a title="Gökhan Türkmen" href="/sanatci/gokhan-turkmen">Gökhan Türkmen</a>
+                                                        <span className="ng-star-inserted"><em>2</em><b>Etkinlik</b>
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </div>

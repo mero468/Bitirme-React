@@ -38,7 +38,16 @@
 }
 
 /* Media screens */
-@media  screen and (max-width: 576px){
+@media  screen and (min-width: 576px){
+    #event-page .detail-artist .artist .artist-image {
+        width: 70px;
+        height: 70px;
+    }
+    
+    #event-page .detail-artist .artist {
+        grid-gap: 0 15px;
+        gap: 0 15px;
+    }
     
     .contents-area {
         padding-top: 50px;
@@ -61,11 +70,60 @@
     #event-page .favorite-add.f-add {
         display: flex;
     }
-    
+    .seance .seance-left {
+        padding: 10px!important;
+    }
+    .seance .seance-left .seance-date {
+        font-size: 14px!important;
+    }
+    .seance .seance-left .seance-place {
+        font-size: 12px!important;
+    }
+    .box-header-title {
+        font-size: 16px !important;
+    }
+
+    .seance .seance-bottom .total-ticket span {
+        font-size: 10px!important;
+    }
 }
 /* @ */
 
-@media screen and  (max-width: 1400px){
+@media screen and  (min-width: 1400px){
+    #event-page .detail-artist .artist .artist-body a {
+        font-size: 16px!important;
+    }
+    
+    #event-page .detail-artist .artist .artist-body span em {
+        font-size: 12px!important;
+        height: 20px;
+        padding: 0 6px;
+    }
+    #event-page .detail-artist .artist .artist-image {
+        width: 90px;
+        height: 90px;
+    }
+    #event-page .detail-artist .artist .artist-body span b {
+        font-size: 12px!important;
+    }
+    
+    .seance .seance-bottom .total-ticket span {
+        font-size: 11px!important;
+    }
+    .seance .seance-bottom .total-ticket b {
+        font-size: 14px!important;
+    }
+    .seance .seance-bottom .buy-button {
+        height: 30px;
+        font-size: 12px!important;
+    }
+    .seance .seance-bottom {
+        grid-gap: 0 10px;
+        gap: 0 10px;
+    }
+    .seance .seance-right .seance-price span em {
+        font-size: 14px!important;
+    }
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
         max-width: 1320px;
     }
@@ -95,8 +153,32 @@
     .seance{
         min-height: 110px;
     }
+    .seance .seance-left {
+        padding: 10px 15px;
+        grid-gap: 3px 0;
+        gap: 3px 0;
+    }
+    .seance .seance-left .seance-date {
+        font-size: 16px!important;
+    }
+    .seance .seance-left .seance-place {
+        font-size: 13px!important;
+    }
+
+    #event-page .cont-box .box-header .box-header-title-right {
+        font-size: 16px!important;
+    }
+    .seance .seance-right {
+        padding-bottom: 30px;
+    }
+    .seance .seance-right .seance-price p {
+        font-size: 10px;
+    }
+    .seance .seance-right .seance-price span {
+        font-size: 22px;
+    }
 }
-@media screen and  (max-width: 1200px){
+@media screen and  (min-width: 1200px){
     .container, .container-lg, .container-md, .container-sm, .container-xl {
         max-width: 1140px;
     }
@@ -147,7 +229,7 @@ ol{
 
 
 
-@media (max-width: 992px){
+@media screen and (min-width: 992px){
 
     #event-page .detail-top-area .detail-top-area-left {
         width: 100%;
@@ -207,3 +289,249 @@ ol{
     background: var(--light-orange);
 }
 
+
+.seance .seance-left {
+    flex-direction: column;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    grid-gap: 6px 0;
+    gap: 6px 0;
+}
+
+.seance .seance-left .seance-date {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.seance .seance-left .seance-place {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--black);
+}
+
+#event-page .cont-box .box-header .box-header-title-right {
+    margin-left: auto;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--black-dark);
+}
+
+.seance .seance-seat {
+    display: flex;
+    align-items: center;
+    position: relative;
+    grid-gap: 8px;
+    gap: 8px;
+    margin-top: auto;
+    color: var(--orange-hover);
+}
+.seance .seance-seat span {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--orange-hover);
+}
+@media screen and (min-width: 420px){
+    .seance-seat .seance-seat-text, .seance-seat span {
+        font-size: 8px!important;
+    }
+    .seance-seat .seance-seat-text, .seance-seat span {
+        min-width: auto;
+    }
+    .seance-seat em {
+        width: 20px!important;
+        height: 20px!important;
+    }
+}
+
+.seance .seance-seat em {
+    width: 24px;
+    height: 24px;
+    color: var(--orange-hover);
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    background-size: 100%;
+}
+.check{
+    position: absolute;
+    right: -11px;
+    top: -4px;
+    width: 15px;
+    height: 15px;
+    background-size: 100%;
+}
+
+.seance .seance-right {
+    padding-bottom: 34px;
+    display: flex;
+    padding-right: 15px;
+}
+.seance .seance-right .seance-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.seance .seance-right .seance-price span {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--black);
+}
+
+
+.seance .seance-right .seance-price p {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.seance .seance-right .seance-price span em {
+    font-size: 16px;
+    font-style: normal;
+}
+
+.seance .seance-bottom {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    white-space: nowrap;
+    width: 100%;
+    height: 100%;
+    grid-gap: 0 15px;
+    gap: 0 15px;
+}
+
+.seance .seance-bottom .total-ticket {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    grid-gap: 0 6px;
+    gap: 0 6px;
+}
+
+.seance .seance-bottom .total-ticket span {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.seance .seance-bottom .total-ticket b {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white-above-orange);
+}
+
+.seance .seance-bottom .buy-button {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0 16px;
+    border-radius: 21px 0 18px;
+    background: var(--orange);
+    color: var(--white);
+    grid-gap: 0 7px;
+    gap: 0 7px;
+    height: 34px;
+}
+.seance .seance-bottom .buy-button:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+/* ********************************* */
+/* Artists */
+
+#event-page .detail-artist .artist {
+    display: flex;
+    align-items: center;
+    grid-gap: 0 20px;
+    gap: 0 20px;
+    position: relative;
+}
+
+#event-page .detail-artist .artist .artist-image {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+    transition: .3s transform;
+}
+#event-page .detail-artist .artist .artist-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+img {
+    display: block;
+}
+fieldset, img {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+#event-page .detail-artist .artist .artist-body {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px 0;
+    gap: 10px 0;
+}
+
+#event-page .detail-artist .artist .artist-body a {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--black);
+}
+a {
+    text-decoration: none;
+    transition: .3s color,.3s border-color,.3s background-color;
+}
+#event-page .detail-artist .artist .artist-body a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#event-page .detail-artist .artist .artist-body span {
+    display: flex;
+    align-items: center;
+    grid-gap: 0 7px;
+    gap: 0 7px;
+}
+
+#event-page .detail-artist .artist .artist-body span em {
+    height: 24px;
+    padding: 0 8px;
+    border-radius: 5px;
+    background: var(--orange);
+    color: var(--white);
+    font-style: normal;
+    font-style: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+#event-page .detail-artist .artist .artist-body span b {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--black);
+}
+#event-page .detail-artist .artist:hover .artist-image {
+    transform: scale(.9);
+}
