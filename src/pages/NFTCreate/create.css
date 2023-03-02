@@ -1,0 +1,28 @@
+.center{
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+}
+.create-cont{
+    font-size: 14px!important;
+    width: 80%;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
+}
+input :focus,:active{
+    border-color: var(--orange-hover) !important;
+}
+
+.form-control:focus{
+    border-color: var(--orange-hover) !important;
+    box-shadow: 0 0 0 0rem var(--orange-hover) !important;
+}
+.create-title{
+    padding: 20px;
+    font-weight: 700;
+    font-size: 38px;
+    margin: 20px;
+    text-align: center;
+}
