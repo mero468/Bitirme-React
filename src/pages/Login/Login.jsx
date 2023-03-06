@@ -23,7 +23,7 @@ const Login = () => {
         redirect: 'follow'
       };
       
-      fetch("http://www.bitirmetezi-374506.oa.r.appspot.com/api/sessions", requestOptions)
+      fetch("https://www.bitirmetezi-374506.oa.r.appspot.com/api/sessions", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
