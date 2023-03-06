@@ -7,41 +7,54 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
    let navigate = useNavigate();
 
-   // const login_request = () =>{
-   //    var formdata = new FormData();
-   //    formdata.append("email", email);
-   //    formdata.append("password", password);
+   const login_request = () =>{
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      
+      var raw = JSON.stringify({
+        "email": "ammarkaid321@gmail.com",
+        "password": "12345678a*"
+      });
+      
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+      };
+      
+      fetch("http://www.bitirmetezi-374506.oa.r.appspot.com/api/sessions", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+      
+      // var requestOptions = {
+      //   method: 'POST',
+      //   headers: myHeaders,
+      //   body: raw,
+      //   redirect: 'follow'
+      // };
+      // let status = 0;
+      // fetch("www.bitirmetezi-374506.oa.r.appspot.com/api/sessions", requestOptions)
+      //    .then(response => {
+      //       status = response.status;
+      //       console.log(status)
+      //       if(status == 200){
+      //          // localStorage.setItem('access-token',result.accessTsoken);
+      //          // localStorage.setItem('refresh-token',result.refreshToken);
+      //          // localStorage.setItem('email',result.email);
+      //          navigate('/');
+      //       }
+      //       else{
+      //          setMessage("Invalid email or password")
+      //          handleShow();
+      //       }
+      //    })
+      //    .then(result => {
 
-   //    var requestOptions = {
-   //    method: 'POST',
-   //    body: formdata,
-   //    redirect: 'follow'
-   //    };
-
-   //    fetch("http://127.0.0.1:8000/api/auth/login/", requestOptions)
-   //    .then(response => response.text())
-   //    .then(result => {
-   //       const obj = JSON.parse(result);
-   //       console.log(obj);
-   //       if('detail' in obj){
-   //          const temp = obj.detail;
-   //          if(temp.includes("Email")){
-   //             setMessage("E-posta kimliği doğrulanmadı!");
-   //          }
-   //          else{
-   //             setMessage("Geçersiz kimlik bilgileri, tekrar deneyin!");
-   //          }
-   //          handleShow();
-   //       }
-   //       else{
-   //          localStorage.setItem('access-token',obj.tokens.access);
-   //          localStorage.setItem('refresh-token',obj.tokens.refresh);
-   //          localStorage.setItem('email',obj.email);
-   //          navigate('/');
-   //       }
-   //    })
-   //    .catch(error => console.log('error', error));
-   // }
+      // })
+      // .catch(error => console.log('error', error));
+   }
    const [password,setPassword] = useState("");
    const [email,setEmail] = useState("");
    const [message,setMessage] = useState("");
@@ -67,7 +80,7 @@ const Login = () => {
                    <a className='flex-grow-1 a-link ' href='/forgot'>Forgot Password </a>
                    </div>
                   <div className='submit'>
-                     <button className='submit-btn'>Login</button>
+                     <button className='submit-btn' onClick={()=>login_request()}>Login</button>
                   </div>
             </div>
          </div>
