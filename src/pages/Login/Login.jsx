@@ -7,13 +7,13 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
    let navigate = useNavigate();
 
-   const login_request = () =>{
+   async  function login_request(){
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
       
       var raw = JSON.stringify({
-        "email": "ammarkaid321@gmail.com",
-        "password": "12345678a*"
+        "email": email,
+        "password": password
       });
       
       var requestOptions = {
@@ -22,38 +22,23 @@ const Login = () => {
         body: raw,
         redirect: 'follow'
       };
-      
-      fetch("bitirmetezi-374506.oa.r.appspot.com/api/sessions", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
-      
-      // var requestOptions = {
-      //   method: 'POST',
-      //   headers: myHeaders,
-      //   body: raw,
-      //   redirect: 'follow'
-      // };
-      // let status = 0;
-      // fetch("www.bitirmetezi-374506.oa.r.appspot.com/api/sessions", requestOptions)
-      //    .then(response => {
-      //       status = response.status;
-      //       console.log(status)
-      //       if(status == 200){
-      //          // localStorage.setItem('access-token',result.accessTsoken);
-      //          // localStorage.setItem('refresh-token',result.refreshToken);
-      //          // localStorage.setItem('email',result.email);
-      //          navigate('/');
-      //       }
-      //       else{
-      //          setMessage("Invalid email or password")
-      //          handleShow();
-      //       }
-      //    })
-      //    .then(result => {
+      let status = 0;
 
-      // })
-      // .catch(error => console.log('error', error));
+      await fetch("/api/sessions", requestOptions)
+         .then(response => 
+            response.text()
+         )
+         .then(result => {            
+            let tokens = JSON.parse(result);
+            localStorage.setItem('access-token',tokens.accessToken);
+            localStorage.setItem('refresh-token',tokens.refreshToken);
+            localStorage.setItem('email',email);
+            navigate('/');
+      })
+      .catch(error => {
+         setMessage("Invalid email or password")
+         handleShow();
+      });
    }
    const [password,setPassword] = useState("");
    const [email,setEmail] = useState("");
