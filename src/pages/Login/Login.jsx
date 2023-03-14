@@ -3,43 +3,11 @@ import { useState } from 'react';
 import { NavBar } from '../../common/NavBar';
 import Modal from 'react-bootstrap/Modal';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = () => {
    let navigate = useNavigate();
-
-   async  function login_request(){
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-      
-      var raw = JSON.stringify({
-        "email": email,
-        "password": password
-      });
-      
-      var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-      };
-      let status = 0;
-
-      await fetch("/api/sessions", requestOptions)
-         .then(response => 
-            response.text()
-         )
-         .then(result => {            
-            let tokens = JSON.parse(result);
-            localStorage.setItem('access-token',tokens.accessToken);
-            localStorage.setItem('refresh-token',tokens.refreshToken);
-            localStorage.setItem('email',email);
-            navigate('/');
-      })
-      .catch(error => {
-         setMessage("Invalid email or password")
-         handleShow();
-      });
-   }
+   const URL = "api/sessions";
    const [password,setPassword] = useState("");
    const [email,setEmail] = useState("");
    const [message,setMessage] = useState("");
@@ -47,12 +15,43 @@ const Login = () => {
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
 
+   const login_request = () =>{
+      var data = JSON.stringify({
+         "email": "ammarkaid321@gmail.com",
+         "password": "12345678a*"
+       });
+       
+       var config = {
+         method: 'post',
+       maxBodyLength: Infinity,
+         url: URL,
+         headers: { 
+           'Content-Type': 'application/json'
+         },
+         data : data
+       };
+       
+       axios(config)
+       .then(function (response) {
+            const tokens = response.data;
+            localStorage.setItem('access-token',tokens.accessToken);
+            localStorage.setItem('refresh-token',tokens.refreshToken);
+            localStorage.setItem('email',email);
+            navigate('/');
+       })
+       .catch(function (error) {
+         console.log(error);
+         setMessage("Invalid email or password, Make sure that you verified your email before logging in!")
+         handleShow();
+       });
+   }
+
    return (
          <>
          <NavBar/>
          <div className="wrapper">
             <div className='form-wrapper'>
-               <h2>Signup </h2>
+               <h2>Login </h2>
                   <div className='email'>
                      <label htmlFor="email">Email:</label>
                      <input type='email'  value={email} name='email' onChange={(e)=> setEmail(e.target.value)}/>
@@ -84,7 +83,7 @@ const Login = () => {
             <Modal.Footer>
                <button onClick={()=> {
                   handleClose();
-               }} variant="primary">Anladım</button>
+               }} variant="primary" className='submit-btn'>Anladım</button>
             </Modal.Footer>
          </Modal>  
       </>

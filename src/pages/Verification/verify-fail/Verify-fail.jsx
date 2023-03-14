@@ -1,8 +1,8 @@
 import React from 'react'
-import { NavBar } from '../../common/NavBar';
+import { NavBar } from '../../../common/NavBar';
 import { useNavigate } from 'react-router-dom';
 
-const Verify = () => {
+const VerifyFail = () => {
    let navigate = useNavigate();
 
    return (
@@ -10,7 +10,7 @@ const Verify = () => {
          <NavBar/>
          <div className="wrapper">
             <div className='form-wrapper'>
-               <h2>Account has been activated Successfully </h2>
+               <h2>Account Verification Failed </h2>
                   <div className='submit'>
                      <button onClick={()=>{
                         navigate("/home")
@@ -21,4 +21,4 @@ const Verify = () => {
       </>
    )
 }
-export default Verify;
+export default VerifyFail;

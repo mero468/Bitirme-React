@@ -6,11 +6,13 @@ import { useEffect } from 'react';
 import moment from 'moment';
 import Modal from 'react-bootstrap/Modal';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Signup = () => {
 
    const [name,setName] = useState("");
    const [password,setPassword] = useState("");
+   const [confirm_password,setConfirmPassword] = useState("");
    const [email,setEmail] = useState("");
    const [phone,setPhone] = useState("");
    const [dateofbirth,setDob] = useState("");
@@ -45,44 +47,87 @@ const Signup = () => {
    };
 
    const handlesubmission = () =>{
-      if(name.length === 0 || phone.length < 10 || !(validateEmail(email))|| dateofbirth.length <=0 || password.length < 8 ){
+      if(name.length === 0 || phone.length < 10 || !(validateEmail(email))|| dateofbirth.length <=0 || password.length < 8 || password != confirm_password){
          seterror(true);
       }
       else{
          seterror(false);
-         var formdata = new FormData();
-         formdata.append("email", email.toLowerCase());
-         formdata.append("fullname", name);
-         formdata.append("password", password);
-         formdata.append("phone", phone);
-         formdata.append("dateofbirth", dateofbirth);
 
-         var requestOptions = {
-         method: 'POST',
-         body: formdata,
-         redirect: 'follow'
+         // var raw = JSON.stringify({
+         //    "email": email.toLowerCase(),
+         //    "name": name,
+         //    "verified": true,
+         //    "birthdate": dateofbirth,
+         //    "password": password,
+         //    "passwordConfirmation": confirm_password,
+         //    "phoneNumber": phone,
+         //    "userType": "admin"
+         //  });
+         console.log(dateofbirth);
+         var data = JSON.stringify({
+            "email": "ammarkaid321@gmail.com",
+            "name": "Serhan",
+            "verified": true,
+            "birthdate": "2001-12-23",
+            "password": "12345678a*",
+            "passwordConfirmation": "12345678a*",
+            "phoneNumber": "05446092540",
+            "userType": "admin"
+          });
+          console.log(data);
+
+    data = JSON.stringify({
+            "email": email.toLowerCase(),
+            "name": name,
+            "verified": true,
+            "birthdate": dateofbirth,
+            "password": password,
+            "passwordConfirmation": confirm_password,
+            "phoneNumber": phone,
+            "userType": "admin"
+          });
+          console.log(data);
+         var config = {
+           method: 'post',
+           maxBodyLength: Infinity,
+           url: 'api/users',
+           headers: { 
+             'Content-Type': 'application/json'
+           },
+           data : data
          };
-
-         fetch("http://127.0.0.1:8000/api/auth/register/", requestOptions)
-         .then(response => response.text())
-         .then(result => {
-            const obj = JSON.parse(result);
-            if(obj.errors === undefined){
-               setMessage("Başarıyla kaydoldunuz, hesabınızı doğrulamak için e-postanızı kontrol edin ve sistemimize giriş yapın.");
-               seterror2(false);
+         
+         axios(config)
+         .then(function (response) {
+            console.log(JSON.stringify(response.data));
+            const mesaj = response.data;
+           if(mesaj.index === undefined){
+            setMessage("Başarıyla kaydoldunuz, hesabınızı doğrulamak için e-postanızı kontrol edin ve sistemimize giriş yapın.");
+            seterror2(false);
             }
             else{
-               if('email' in obj.errors){
-                  setMessage("Girdiğiniz e-posta daha önce sistemde kayıtlıdır.");
-                  seterror2(true);
-               }
-               else if('phone' in obj.errors){
-                  setMessage("Girdiğiniz telefon numarası daha önce sistemde kayıtlıdır.");
-                  seterror2(true);
-               }
+               setMessage("Girdiğiniz e-posta daha önce sistemde kayıtlıdır.");
+               seterror2(true);               
             }
             handleShow();
-         }).catch(error => console.log('error', error));
+         })
+         .catch(function (error) {
+            setMessage(error.response.data[0].message)
+            seterror2(true);
+            handleShow();
+         });
+         
+
+         // fetch('api/users', requestOptions)
+         // .then(response => response.text())
+         // .then(result => {
+         //    const obj = JSON.parse(result);
+
+         
+         // }).catch(error =>{ 
+         //    console.log(error);
+
+         // });
 
       }
    }
@@ -125,7 +170,12 @@ const Signup = () => {
                      <label htmlFor="password">Şifre:</label>
                      <input type='password' value={password} name='password' onChange={(e)=> setPassword(e.target.value)}/>
                      {error && password.length < 8 &&  <span style={{color: "red"}}>{"Şifre 8 karakterden oluşmalıdır"}</span>}
-                  </div>              
+                  </div>
+                  <div className='password'>
+                     <label htmlFor="confirmpassword">Tekrar Şifre:</label>
+                     <input type='text' value={confirm_password} name='confirmpassword' onChange={(e)=> setConfirmPassword(e.target.value)}/>
+                     {error && (confirm_password.length < 8 ||  password != confirm_password) && <span style={{color: "red"}}>{"Şifre 8 karakterden oluşmalıdır"}</span>}
+                  </div>                  
                   <div className="date">
                      <label htmlFor="date">Doğum Tarihi:</label>
                      <input type="date"name='date'  value={dateofbirth} max={MaxDate} min={MinDate} onChange={(e)=> setDob(e.target.value)}/>

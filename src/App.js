@@ -5,6 +5,7 @@ import VerificationPage from './pages/Verification/VerificationPage';
 import Home from './pages/Home/Home';
 import TicketPage from './pages/TicketPage/TicketPage';
 import { Create } from './pages/NFTCreate/Create';
+import ProfilePage from './pages/Personal/Profile';
 function App() {
 	return (
 		<Router>
@@ -15,10 +16,12 @@ function App() {
 				{/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
+				<Route path='aha' element={<VerificationPage/>}/>
 				<Route path='*' element={<Home />} />
 				<Route path='' element={<Home />} />
 				<Route path='/ticket/1' element={<TicketPage />} />
 				<Route path='/create-ticket' element={<Create/>}/>
+				<Route path='/profil' element={<ProfilePage/>}/>
 			</Routes>
 		</Router>
 	);

@@ -79,7 +79,7 @@ nav {
 }
 .login:hover,
 .login:active{
-    font-weight: 900!important;
+    font-weight: 600!important;
     color: #272d36 !important;
     background-color: #FFF !important;
     border: var(--bs-btn-border-width) solid #FFF!important;

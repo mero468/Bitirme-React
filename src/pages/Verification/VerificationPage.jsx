@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import LoadingSpinner from '../../common/Spinner/Spinner';
+import VerifyFail from './verify-fail/Verify-fail';
+import Verify from './verify-success/Verify';
 function VerificationPage() {
 	const [loading, setLoading] = useState(true);
 	const [failed, setFailed] = useState(false);
 	const { token } = useParams();
 	const verifyURL = 'https://bitirmetezi-374506.oa.r.appspot.com/api/users/verify/';
+
 	useEffect(() => {
 		const requestOptions = {
 			method: 'POST',
@@ -21,6 +25,7 @@ function VerificationPage() {
 					setFailed(false);
 				} else {
 					setFailed(true);
+
 					console.log(response.body);
 				}
 			})
@@ -34,16 +39,14 @@ function VerificationPage() {
 	return (
 		<div>
 			{
-				loading && <h1>Loading...</h1>
-				/*Return loading screen here like with a spinner and a text that says verifying your email...*/
+				loading && <LoadingSpinner/>
+
 			}
 			{
-				!loading && !failed && <h1>Success</h1>
-				/*Return success page here*/
+				!loading && !failed && <Verify/>
 			}
 			{
-				!loading && failed && <h1>Failed</h1>
-				/*Return failed page here*/
+				!loading && failed && <VerifyFail/>
 			}
 		</div>
 	);

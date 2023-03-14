@@ -13,7 +13,7 @@ const Card = () => {
             </div>
             <div class='card-desc'>
                 <span class='card-desc-first'>
-                    <strong style={{fontWeight:"bolder", fontSize:"14pt"}}>Gulsen Concert</strong>
+                    <strong style={{fontWeight:"600", fontSize:"14pt"}}>Gulsen Concert</strong>
                     <p className='price m-0'> <i class="fas fa-map-marked fa-xs iconthing"></i> fIzmir Arena</p>
                     <hr className='m-0'/>
 
@@ -22,7 +22,7 @@ const Card = () => {
 
                 </span>
                 <span class='card-desc-last event-price container-fluid'>
-                    <p className='my-2 me-5 float-sm-start'>  <strong  style={{fontSize:"20pt"}}>329.</strong>00</p>
+                    <p className='my-2 me-5 float-sm-start'>  <strong  style={{fontWeight:"600",fontSize:"20pt"}}>329.</strong>00</p>
                     <button className='ms-5 basket-btn my-2'> <i class="fas fa-shopping-cart fa-sm  "></i></button>
                 </span>
             </div>

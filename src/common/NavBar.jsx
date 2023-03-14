@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useNavigate } from "react-router-dom";
+import LoggedNav from './LoggedNav/LoggedNav';
 
 import "./navbar.css"
 export const NavBar = (props) => {
   let navigate = useNavigate(); 
+
   const routeChange = (path) =>{ 
     navigate(path);
   }
-  
+  const [Logged,setLogged] = useState(true);
 
   // var scrollToTopBtn = document.querySelector(".scrollToTopBtn");
   // var rootElement = document.documentElement;
@@ -38,16 +40,24 @@ export const NavBar = (props) => {
     <>
       <Navbar  expand='sm'>
       <Container style={{position:'absolute'}} fluid>
-        <Navbar.Brand className='logo ms-5' href="/">NFT Tickets</Navbar.Brand>
+        <Navbar.Brand className='logo ms-3' href="/">NFT Tickets</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav  className="me-auto">
             </Nav>
             <Nav>
-            <div class="btn-group nav-btn  rounded-pill me-5" role="group" aria-label="Outline example">
-                <button type="button" onClick={() => routeChange("/signup")} class="btn leftbtn  btn-outline-primary login"> <i class="fas fa-user fa-sm  me-2"></i> Signup</button>
-                <button type="button" onClick={() => routeChange("/login")} class="btn rightbtn btn-outline-primary login"><i class="fas fa-arrow-right fa-xs me-2 "></i> Login</button>
-            </div>
+              {
+                Logged ? <>
+                  <LoggedNav/>
+                </>
+                :<>
+                  <div className="btn-group nav-btn  rounded-pill me-5" role="group" aria-label="Outline example">
+                      <button type="button" onClick={() => routeChange("/signup")} className="btn leftbtn  btn-outline-primary login"> <i className="fas fa-user fa-sm  me-2"></i> Signup</button>
+                      <button type="button" onClick={() => routeChange("/login")} className="btn rightbtn btn-outline-primary login"><i className="fas fa-arrow-right fa-xs me-2 "></i> Login</button>
+                  </div>
+                </>
+              }
+
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -58,10 +68,10 @@ export const NavBar = (props) => {
               <div class=" row no-gutters bars justify-content-center">
                 
                 <div className='col-9 bar'>
-                    <div class="input-group mb-3">
-                    <input type="text" class="ps-5 form-control search-inpt " placeholder="Search for Event" aria-label="Search for event" aria-describedby="basic-addon2"/>
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-secondary my-0 search-btn" type="button"><i class="fas fa-search fa-lg fa-fw"></i></button>
+                    <div className="input-group mb-3">
+                    <input type="text" className="ps-5 form-control search-inpt " placeholder="Search for Event" aria-label="Search for event" aria-describedby="basic-addon2"/>
+                    <div className="input-group-append">
+                      <button className="btn btn-outline-secondary my-0 search-btn" type="button"><i className="fas fa-search fa-lg fa-fw"></i></button>
                     </div>
                     </div>
                 </div>

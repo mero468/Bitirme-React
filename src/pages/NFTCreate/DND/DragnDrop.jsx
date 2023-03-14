@@ -1,12 +1,13 @@
 import React from 'react'
 import "./style.scss"
 import { useState } from 'react';
+import {generateUploadURL} from '../Services/S3';
 
 export const DragDropFile =() =>{
     const [highlight, setHighlight] = React.useState(false);
     const [preview, setPreview] = React.useState("");
     const [drop, setDrop] = React.useState(false);
-  
+    const [file,setFile] = React.useState("");
     const handleEnter = (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -38,14 +39,15 @@ export const DragDropFile =() =>{
       setDrop(true);
   
       const [file] = e.target.files || e.dataTransfer.files;
-  
-      uploadFile(file);
+      uploadFile(file)
     };
-  
-    function uploadFile(file) {
+    
+
+    //Uploading file to bucket
+    async function uploadFile(file) {
       const reader = new FileReader();
       reader.readAsBinaryString(file);
-  
+      console.log(file);
       reader.onload = () => {
         // this is the base64 data
         const fileRes = btoa(reader.result);
@@ -56,6 +58,28 @@ export const DragDropFile =() =>{
       reader.onerror = () => {
         console.log("There is a problem while uploading...");
       };
+
+      const url = await generateUploadURL();
+
+      console.log(url)
+      await fetch(url, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "multipart/form-data"
+        },
+        body: file
+      })
+    
+      const imageUrl = url.split('?')[0]
+      console.log(imageUrl)
+
+    }
+    
+    const balls =() =>{
+      
+      const url = generateUploadURL();
+
+      console.log(url)
     }
   
     return (
@@ -73,7 +97,7 @@ export const DragDropFile =() =>{
           }`}
           style={{ backgroundImage: `url(${preview})` }}
         >
-          <form className="my-form">
+          <div className="my-form">
             <p>Drop image here</p>
             <div className="upload-button">
               <input
@@ -84,7 +108,8 @@ export const DragDropFile =() =>{
               />
               <button className="button">Upload Here</button>
             </div>
-          </form>
+          </div>
+          <a onClick={()=> uploadFile()}> Upload file to bucket</a>
         </div>
       </>
     );

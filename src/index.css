@@ -52,13 +52,13 @@ html, body {
 
 .primary {
   font-size: 64px;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 20px;
 }
 
 .secondary {
   font-size: 44px;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 20px;
 }
 
